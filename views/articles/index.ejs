@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Blog</title>
+</head>
+<body>
+    <!-- Heading Blog -->
+    <div class="flex flex-col gap-5 items-center">
+
+        <div class=" flex flex-col items-center">
+            <h1 class="text-5xl self-center mb-4">Blog Article</h1>
+            <a href="/articles/new" class=" rounded-md m-4 mb-8  p-2 bg-red-400  "> New Article</a>
+        </div>
+        <div class= "w-full flex flex-col items-center gap-2" >
+
+            <% articles.forEach(article=>{ %>
+                <div class=" border-2 w-4/5 h-fit mt-6   ">
+                    <div>
+                        <div class=" text-2xl font-extrabold">  <%= article.title %></div>
+                        <div class=" text-md font-light ">
+                            <%= article.createdAt.toLocaleDateString() %>
+                        </div> 
+                        <div class="text-lg ">
+                            <%= article.description %> 
+                            <a href="articles/<%=article.slug%>">Read More</a>
+                            <form action="/articles/<%= article.id%>?_method=DELETE" method="post">
+                                <button type="submit">DELETE</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                    <%  }) %> 
+                    
+            </div>
+        </div>
+        </body>
+</html>
