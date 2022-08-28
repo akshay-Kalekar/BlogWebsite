@@ -3,6 +3,7 @@ const Article = require('./models/article')
 const mongoose = require('mongoose')
 const articleRouter = require('./routes/article')
 const methodOverride = require('method-override')
+const port = 3000
 const app = express()
 
 mongoose.connect('mongodb://localhost/blog')
@@ -19,4 +20,4 @@ app.get('/',async (req,res)=>{
     console.log(articles)
 })
 
-app.listen(5000)
+app.listen(process.env.PORT || port)
