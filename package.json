@@ -6,7 +6,7 @@
     "jsdom": "^20.0.0",
     "marked": "^4.0.19",
     "method-override": "^3.0.0",
-    "mongoose": "^6.5.2",
+    "mongoose": "^6.5.3",
     "slugify": "^1.6.5"
   },
   "devDependencies": {
@@ -18,7 +18,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-     "start": " node index.js",
+    "start": " node index.js",
     "start:dev": " nodemon index.js"
   },
   "keywords": [],
